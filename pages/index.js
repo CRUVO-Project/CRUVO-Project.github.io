@@ -98,6 +98,7 @@ export default function Home() {
           name="description"
           content="CRUVO IT Community - A hub for IT enthusiasts"
         />
+        <link rel="icon" href="/favicon.ico?v=2" />
       </Head>
 
       {init && (
