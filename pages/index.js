@@ -162,6 +162,8 @@ export default function Home() {
           </Link>
         </div>
 
+
+
         <div className="max-w-4xl mx-auto mt-12">
           <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
           <p className="text-lg mb-6">
