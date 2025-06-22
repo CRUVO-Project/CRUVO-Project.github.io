@@ -31,18 +31,24 @@ export default function Home() {
       fpsLimit: 120,
       interactivity: {
         events: {
-          onClick: {
-            enable: false,
+          onclick: {
+            enable: !0,
             mode: "push",
           },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: "grab",
           },
         },
         modes: {
           push: {
             quantity: 4,
+          },
+          grab: {
+            distance: 100,
+            line_linked: {
+              opacity: 1,
+            },
           },
           repulse: {
             distance: 100,
@@ -54,10 +60,10 @@ export default function Home() {
         color: { value: ["#6b7280", "#9ca3af", "#d1d5db"] },
         links: {
           color: "#6b7280",
-          distance: 150,
+          distance: 160,
           enable: true,
-          opacity: 0.3,
-          width: 5,
+          opacity: 0.5,
+          width: 2,
         },
         move: {
           direction: "none",
@@ -66,7 +72,7 @@ export default function Home() {
             default: "bounce",
           },
           random: true,
-          speed: 0.6,
+          speed: 0.8,
           straight: false,
         },
         number: {
@@ -82,7 +88,7 @@ export default function Home() {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: 2 },
         },
       },
       detectRetina: true,
@@ -91,7 +97,7 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black to-purple-900 text-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-black to-purple-900 text-white">
       <Head>
         <title>CRUVO IT Community</title>
         <meta
@@ -109,8 +115,9 @@ export default function Home() {
         />
       )}
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 select-none">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+      <main className="z-10 flex-grow flex flex-col items-center justify-center text-center px-4 select-none">
+        <div className="min-h-[120px] md:min-h-auto flex">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 px-2">
           <Typewriter
             onInit={(typewriter) => {
               typewriter
@@ -125,6 +132,7 @@ export default function Home() {
             }}
           />
         </h1>
+        </div>
         <p className="text-lg md:text-2xl max-w-2xl mb-8">
           Welcome to <span className="text-cyan-400">CRUVO IT Community</span>,
           a vibrant hub for IT enthusiasts, developers, and innovators. Join us
@@ -163,8 +171,6 @@ export default function Home() {
           </Link>
         </div>
 
-
-
         <div className="max-w-4xl mx-auto mt-12">
           <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
           <p className="text-lg mb-6">
@@ -173,9 +179,9 @@ export default function Home() {
             tech enthusiasts can collaborate, learn, and grow together.
           </p>
         </div>
-      </div>
+      </main>
 
-      <footer className="text-center py-6">
+      <footer className="py-6 text-center">
         <p>© 2025 CRUVO IT Community. All rights reserved.</p>
       </footer>
     </div>
