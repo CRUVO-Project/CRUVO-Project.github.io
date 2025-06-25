@@ -21,10 +21,6 @@ export default function Home() {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   const options = useMemo(
     () => ({
       background: {
@@ -156,7 +152,6 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Particles
             id="tsparticles"
-            particlesLoaded={particlesLoaded}
             options={options}
           />
         </div>
