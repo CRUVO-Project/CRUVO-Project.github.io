@@ -11,7 +11,7 @@ export default function Home() {
   const [isRussian, setIsRussian] = useState(false);
 
   useEffect(() => {
-    const userLanguage = navigator.language || navigator.userLanguage;
+    const userLanguage = navigator.language || 'en';
     setIsRussian(userLanguage.startsWith('ru'));
 
     initParticlesEngine(async (engine) => {
@@ -143,6 +143,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-black to-purple-900 text-white relative">
       <Head>
         <title>{isRussian ? "CRUVO ИТ Сообщество" : "CRUVO IT Community"}</title>
+        <html lang={isRussian ? 'ru' : 'en'} />
+        <meta property="og:locale" content={isRussian ? 'ru_RU' : 'en_US'} />
         <meta
           name="description"
           content={isRussian ? "CRUVO ИТ Сообщество - Центр для ИТ-энтузиастов" : "CRUVO IT Community - A hub for IT enthusiasts"}
